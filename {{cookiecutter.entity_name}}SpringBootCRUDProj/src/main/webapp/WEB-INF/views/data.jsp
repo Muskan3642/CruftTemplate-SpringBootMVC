@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>{{cookiecutter.entity_name}} Data Page</title>
+<title>Customer Data Page</title>
 
 <style>
 	body {
@@ -71,42 +71,45 @@
 		color: #777;
 	}
 </style>
+
 </head>
 <body>
 
-	<h2>Welcome To {{cookiecutter.entity_name}} Data Page</h2>
+<div class="container">
+	<div class="content">
+		<h2>Welcome to the Customer Data Page</h2>
 
-	<c:if test="${empty list}">
-		<h4>No Data Found</h4>
-	</c:if>
+		<c:if test="${empty list}">
+			<h4>No Data Found</h4>
+		</c:if>
 
-
-	<c:if test="${!empty list}">
-
-		<table border=2>
-			<tr>
-				<th>Id</th>
-				<th>{{cookiecutter.attribute1}}</th>
-				<th>{{cookiecutter.attribute2}}</th>
-				<th>{{cookiecutter.attribute3}}</th>
-			</tr>
-
-			<c:forEach items="${list}" var="ob">
+		<c:if test="${!empty list}">
+			<table>
 				<tr>
-					<td>${ob.id}</td>
-					<td>${ob.{{cookiecutter.attribute1}}}</td>
-					<td>${ob.{{cookiecutter.attribute2}}}</td>
-					<td>${ob.{{cookiecutter.attribute3}}}</td>
-					<td><a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/view?id=${ob.id}">View</a></td>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone Number</th>
+					<th>Action</th>
 				</tr>
-			</c:forEach>
 
-		</table>
+				<c:forEach items="${list}" var="ob">
+					<tr>
+						<td>${ob.id}</td>
+						<td>${ob.name}</td>
+						<td>${ob.email}</td>
+						<td>${ob.phno}</td>
+						<td><a href="/customerSpringBootCRUDProj/view?id=${ob.id}">View</a></td>
+					</tr>
+				</c:forEach>
 
-	</c:if>
+			</table>
+		</c:if>
 
-	<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/reg">Register</a> ${msg} &nbsp;
-	<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/">Home</a> ${msg}
+		<a href="/customerSpringBootCRUDProj/reg" class="register-link">Register</a> ${msg} &nbsp;
+		<a href="/customerSpringBootCRUDProj/all">Show All</a>
+	</div>
+</div>
 
 </body>
 </html>

@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>{{cookiecutter.entity_name}} View Page</title>
+<title>Customer View Page</title>
+
 <style>
 	body {
 		font-family: Arial, sans-serif;
@@ -56,47 +57,45 @@
 </head>
 <body>
 
-<h2>Welcome to {{cookiecutter.entity_name}} View Page</h2>
+<h2>Welcome to the Customer View Page</h2>
 
-<table border=2>
+<table>
+	<tr>
+		<th>Id</th>
+		<td>${emp.id}</td>
+	</tr>
+	<tr>
+		<th>Name</th>
+		<td>${emp.name}</td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td>${emp.email}</td>
+	</tr>
+	<tr>
+		<th>Phone Number</th>
+		<td>${emp.phno}</td>
+	</tr>
 
-<tr>
-	<th>Id</th>
-	<td>${emp.id}</td>
-</tr>
-<tr>
-	<th>{{cookiecutter.attribute1}}</th>
-	<td>${emp.{{cookiecutter.attribute1}}}</td>
-</tr>
-<tr>
-	<th>{{cookiecutter.attribute2}}</th>
-	<td>${emp.{{cookiecutter.attribute2}}}</td>
-</tr>
-<tr>
-	<th>{{cookiecutter.attribute3}}</th>
-	<td>${emp.{{cookiecutter.attribute3}}}</td>
-</tr>
-
-<tr>
-	<th>Delete</th>
-	<td>
-		<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/delete?id=${emp.id}">Delete</a>
-	</td>
-</tr>
-<tr>
-	<th>Update</th>
-	<td>
-		<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/getUpdate?id=${emp.id}">Update</a>
-	</td>
-</tr>
-
+	<tr>
+		<th>Delete</th>
+		<td>
+			<a href="/customerSpringBootCRUDProj/delete?id=${emp.id}">Delete</a>
+		</td>
+	</tr>
+	<tr>
+		<th>Update</th>
+		<td>
+			<a href="/customerSpringBootCRUDProj/getUpdate?id=${emp.id}">Update</a>
+		</td>
+	</tr>
 </table>
 
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/all">View All</a> &nbsp;
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/reg">Register</a> &nbsp;
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/">Home</a>
+<a href="/customerSpringBootCRUDProj/all">View All</a>
+<a href="/customerSpringBootCRUDProj/reg">Register</a>
+<a href="/customerSpringBootCRUDProj/">Home</a>
 
-${msg}
+<p class="msg">${msg}</p>
 
 </body>
 </html>

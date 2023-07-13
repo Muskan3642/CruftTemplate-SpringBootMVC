@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>{{cookiecutter.entity_name}} Welcome Page</title>
+<title>Customer Welcome Page</title>
+
 <style>
 	body {
 		font-family: Arial, sans-serif;
@@ -46,13 +47,18 @@
 		background-color: #23527c;
 	}
 </style>
+
 </head>
 <body>
 
-<h2>Welcome to {{cookiecutter.entity_name}} Website</h2>
+<div class="container">
+	<div class="content">
+		<h2>Welcome to the Customer Website</h2>
 
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/all">View All</a> &nbsp;
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/reg">Register</a>
+		<a href="/customerSpringBootCRUDProj/all">View All</a>
+		<a href="/customerSpringBootCRUDProj/reg">Register</a>
+	</div>
+</div>
 
 </body>
 </html>

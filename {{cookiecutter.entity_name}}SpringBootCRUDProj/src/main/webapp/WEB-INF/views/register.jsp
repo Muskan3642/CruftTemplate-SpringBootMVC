@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>{{cookiecutter.entity_name}} Register/Edit Page</title>
+<title>Customer Register/Edit Page</title>
+
 <style>
 	body {
 		font-family: Arial, sans-serif;
@@ -77,51 +78,55 @@
 		color: #777;
 	}
 </style>
+
 </head>
 <body>
 
-<c:choose>
-	<c:when test="${'edit' eq mode }">
-		<h3>Welcome to {{cookiecutter.entity_name}} Edit Page</h3>
-		<c:set var="eid"  value="${id}" ></c:set>
-	</c:when>
-	<c:otherwise>
-		<h3>Welcome to {{cookiecutter.entity_name}} Registration Page</h3>
-	</c:otherwise>
-</c:choose>
+<div class="container">
+	<div class="form-container">
+		<c:choose>
+			<c:when test="${'edit' eq mode}">
+				<h3>Welcome to the Customer Edit Page</h3>
+				<c:set var="eid" value="${id}" ></c:set>
+			</c:when>
+			<c:otherwise>
+				<h3>Welcome to the Customer Registration Page</h3>
+			</c:otherwise>
+		</c:choose>
 
-<pre>
-<form:form action="save" method="post" modelAttribute="employee">
+		<form:form action="save" method="post" modelAttribute="employee">
 
-<c:if test="${'edit' eq mode }">
-Id     : <form:input path="id"  readOnly="true"/>	
-</c:if>
+			<c:if test="${'edit' eq mode}">
+				<label for="id">ID:</label>
+				<form:input path="id" id="id" readonly="true"/>
+			</c:if>
 
-{{cookiecutter.attribute1}}     : <form:input path="{{cookiecutter.attribute1}}"/>
+			<label for="name">Name:</label>
+			<form:input path="name" id="name"/>
 
-{{cookiecutter.attribute2}}   	 : <form:input path="{{cookiecutter.attribute2}}"/>
+			<label for="email">Email:</label>
+			<form:input path="email" id="email"/>
 
-{{cookiecutter.attribute3}}   : <form:input path="{{cookiecutter.attribute3}}"/>
+			<label for="phno">Phone Number:</label>
+			<form:input path="phno" id="phno"/>
 
-<c:choose>
-	<c:when test="${'edit' eq mode }">
-		<input type="submit" value="Update {{cookiecutter.entity_name}}">
-	</c:when>
-	<c:otherwise>
-		<input type="submit" value="Register {{cookiecutter.entity_name}}">
-	</c:otherwise>
-</c:choose>
+			<c:choose>
+				<c:when test="${'edit' eq mode}">
+					<input type="submit" value="Update Customer">
+				</c:when>
+				<c:otherwise>
+					<input type="submit" value="Register Customer">
+				</c:otherwise>
+			</c:choose>
 
-</form:form>
+		</form:form>
 
-</pre>
+		<p class="msg">${msg}</p>
 
-${msg}
-
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/all">Show All</a> &nbsp;
-<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/">Home</a>
-
-
+		<a href="/customerSpringBootCRUDProj/all">Show All</a>
+		<a href="/customerSpringBootCRUDProj/">Home</a>
+	</div>
+</div>
 
 </body>
 </html>
