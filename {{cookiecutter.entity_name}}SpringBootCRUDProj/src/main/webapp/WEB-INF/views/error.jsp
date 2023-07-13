@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Error Page</title>
+<title>{{cookiecutter.entity_name}} Error Page</title>
 
 <style>
 	body {
@@ -38,8 +38,7 @@
 <body>
 
 <h2>There was some error. Please go to the Home Page.</h2>
-
-<a href="/customerSpringBootCRUDProj/">Home</a>
+<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/">Home</a> &nbsp;
 
 </body>
 </html>

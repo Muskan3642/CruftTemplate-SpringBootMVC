@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer View Page</title>
+<title>{{cookiecutter.entity_name}} View Page</title>
 
 <style>
 	body {
@@ -57,7 +57,7 @@
 </head>
 <body>
 
-<h2>Welcome to the Customer View Page</h2>
+<h2>Welcome to the {{cookiecutter.entity_name}} View Page</h2>
 
 <table>
 	<tr>
@@ -65,30 +65,30 @@
 		<td>${emp.id}</td>
 	</tr>
 	<tr>
-		<th>Name</th>
-		<td>${emp.name}</td>
+		<th>{{cookiecutter.attribute1}}</th>
+		<td>${emp.{{cookiecutter.attribute1}}}</td>
 	</tr>
 	<tr>
-		<th>Email</th>
-		<td>${emp.email}</td>
+		<th>{{cookiecutter.attribute2}}</th>
+		<td>${emp.{{cookiecutter.attribute2}}}</td>
 	</tr>
 	<tr>
-		<th>Phone Number</th>
-		<td>${emp.phno}</td>
+		<th>{{cookiecutter.attribute3}}</th>
+		<td>${emp.{{cookiecutter.attribute3}}}</td>
 	</tr>
-
 	<tr>
 		<th>Delete</th>
 		<td>
-			<a href="/customerSpringBootCRUDProj/delete?id=${emp.id}">Delete</a>
+			<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/delete?id=${emp.id}">Delete</a>
 		</td>
 	</tr>
 	<tr>
 		<th>Update</th>
 		<td>
-			<a href="/customerSpringBootCRUDProj/getUpdate?id=${emp.id}">Update</a>
+			<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/getUpdate?id=${emp.id}">Update</a>
 		</td>
 	</tr>
+	
 </table>
 
 <a href="/customerSpringBootCRUDProj/all">View All</a>

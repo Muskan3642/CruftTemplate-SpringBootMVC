@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Welcome Page</title>
+<title>{{cookiecutter.entity_name}}  Welcome Page</title>
 
 <style>
 	body {
@@ -53,7 +53,7 @@
 
 <div class="container">
 	<div class="content">
-		<h2>Welcome to the Customer Website</h2>
+		<h2>Welcome to the {{cookiecutter.entity_name}}  Website</h2>
 
 		<a href="/customerSpringBootCRUDProj/all">View All</a>
 		<a href="/customerSpringBootCRUDProj/reg">Register</a>

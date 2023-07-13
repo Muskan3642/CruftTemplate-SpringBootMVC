@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Register/Edit Page</title>
+<title>{{cookiecutter.entity_name}} Register/Edit Page</title>
 
 <style>
 	body {
@@ -86,11 +86,11 @@
 	<div class="form-container">
 		<c:choose>
 			<c:when test="${'edit' eq mode}">
-				<h3>Welcome to the Customer Edit Page</h3>
+				<h3>Welcome to the {{cookiecutter.entity_name}} Edit Page</h3>
 				<c:set var="eid" value="${id}" ></c:set>
 			</c:when>
 			<c:otherwise>
-				<h3>Welcome to the Customer Registration Page</h3>
+				<h3>Welcome to the {{cookiecutter.entity_name}} Registration Page</h3>
 			</c:otherwise>
 		</c:choose>
 
@@ -101,21 +101,17 @@
 				<form:input path="id" id="id" readonly="true"/>
 			</c:if>
 
-			<label for="name">Name:</label>
-			<form:input path="name" id="name"/>
+			{{cookiecutter.attribute1}}     : <form:input path="{{cookiecutter.attribute1}}"/>
 
-			<label for="email">Email:</label>
-			<form:input path="email" id="email"/>
+			{{cookiecutter.attribute2}}   	 : <form:input path="{{cookiecutter.attribute2}}"/>
 
-			<label for="phno">Phone Number:</label>
-			<form:input path="phno" id="phno"/>
-
+			{{cookiecutter.attribute3}}   : <form:input path="{{cookiecutter.attribute3}}"/>
 			<c:choose>
 				<c:when test="${'edit' eq mode}">
-					<input type="submit" value="Update Customer">
+					<input type="submit" value="Update  {{cookiecutter.entity_name}}">
 				</c:when>
 				<c:otherwise>
-					<input type="submit" value="Register Customer">
+					<input type="submit" value="Register  {{cookiecutter.entity_name}}">
 				</c:otherwise>
 			</c:choose>
 

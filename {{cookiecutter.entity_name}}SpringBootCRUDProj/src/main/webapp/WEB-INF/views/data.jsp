@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Data Page</title>
+<title>{{cookiecutter.entity_name}} Data Page</title>
 
 <style>
 	body {
@@ -77,7 +77,7 @@
 
 <div class="container">
 	<div class="content">
-		<h2>Welcome to the Customer Data Page</h2>
+		<h2>Welcome to the {{cookiecutter.entity_name}} Data Page</h2>
 
 		<c:if test="${empty list}">
 			<h4>No Data Found</h4>
@@ -87,19 +87,18 @@
 			<table>
 				<tr>
 					<th>Id</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Phone Number</th>
-					<th>Action</th>
+					<th>{{cookiecutter.attribute1}}</th>
+					<th>{{cookiecutter.attribute2}}</th>
+					<th>{{cookiecutter.attribute3}}</th>
 				</tr>
 
 				<c:forEach items="${list}" var="ob">
 					<tr>
 						<td>${ob.id}</td>
-						<td>${ob.name}</td>
-						<td>${ob.email}</td>
-						<td>${ob.phno}</td>
-						<td><a href="/customerSpringBootCRUDProj/view?id=${ob.id}">View</a></td>
+						<td>${ob.{{cookiecutter.attribute1}}}</td>
+					<td>${ob.{{cookiecutter.attribute2}}}</td>
+					<td>${ob.{{cookiecutter.attribute3}}}</td>
+					<td><a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/view?id=${ob.id}">View</a></td>
 					</tr>
 				</c:forEach>
 
@@ -108,6 +107,7 @@
 
 		<a href="/customerSpringBootCRUDProj/reg" class="register-link">Register</a> ${msg} &nbsp;
 		<a href="/customerSpringBootCRUDProj/all">Show All</a>
+		<a href="/{{cookiecutter.entity_name}}SpringBootCRUDProj/">Home</a> ${msg}
 	</div>
 </div>
 
