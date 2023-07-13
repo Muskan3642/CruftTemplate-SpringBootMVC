@@ -8,6 +8,69 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>{{cookiecutter.entity_name}} Data Page</title>
+
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f2f2f2;
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	.content {
+		text-align: center;
+	}
+
+	h2 {
+		color: #333;
+		margin-bottom: 20px;
+	}
+
+	h4 {
+		color: #777;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th, td {
+		padding: 10px;
+		border: 1px solid #ccc;
+		text-align: left;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+
+	a {
+		text-decoration: none;
+		color: #337ab7;
+		margin-right: 10px;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.register-link {
+		margin-top: 20px;
+	}
+
+	.msg {
+		margin-top: 10px;
+		color: #777;
+	}
+</style>
 </head>
 <body>
 

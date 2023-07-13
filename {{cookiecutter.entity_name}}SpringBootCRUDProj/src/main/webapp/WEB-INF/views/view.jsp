@@ -7,6 +7,52 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>{{cookiecutter.entity_name}} View Page</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 20px;
+	}
+
+	h2 {
+		color: #333;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th, td {
+		padding: 10px;
+		border: 1px solid #ccc;
+		text-align: left;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+
+	a {
+		display: inline-block;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 4px;
+		background-color: #337ab7;
+		color: #fff;
+		text-decoration: none;
+		margin-right: 10px;
+	}
+
+	a:hover {
+		background-color: #23527c;
+	}
+
+	.msg {
+		margin-top: 10px;
+		color: #777;
+	}
+</style>
+
 </head>
 <body>
 
